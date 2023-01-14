@@ -42,15 +42,16 @@ def search(request, query):
     try:
         # define search query
         query = {
-            "size": 20,
+            "size": 30,
             "sort": {
                 "publishedDate": {
                     "order": "desc"
                 }
             },
             "query": {
-                "query_string": {
-                    "query": query
+                "multi_match": {
+                    "query": query,
+                    "fuzziness": 1
                 }
             }
         }

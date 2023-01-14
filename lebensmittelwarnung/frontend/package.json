@@ -34,8 +34,11 @@
     "@types/html-webpack-plugin": "^3.2.6",
     "@types/lodash": "^4.14.191",
     "@types/react-dom": "^18.0.10",
+    "css-loader": "^6.7.3",
     "html-webpack-plugin": "^5.5.0",
     "lodash": "^4.17.21",
-    "react-router-dom": "^6.6.2"
+    "react-animate-height": "^3.1.0",
+    "react-router-dom": "^6.6.2",
+    "style-loader": "^3.3.1"
   }
 }
