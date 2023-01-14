@@ -4,10 +4,10 @@ import FoodComponent from './FoodComponent';
 import ProductComponent from './ProductComponent';
 import NotFoundComponent from './NotFoundComponent';
 
-function ItemComponents( { searchResult } : { searchResult:[]}) {
+function ItemComponents( { searchResult, notFound } : { searchResult:[], notFound:boolean }) {
     return (
         <Box style={{ height: "80%" }}>
-            {searchResult.length == 0 
+            { notFound 
                 ? <NotFoundComponent/> 
                 : searchResult.map((item:any, i:number) => {
                     return (

@@ -1,14 +1,16 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Chip from '@mui/material/Chip';
+import LaunchIcon from '@mui/icons-material/Launch';
 
 function ProductComponent({ searchItem } : { searchItem:any }) {
     return (
         <Box sx={{ margin: "20px 10vw 20px 10vw", p: 3, border: "1px solid", borderRadius: "15px" }}>
             {/* Title */}
             <Typography variant="h6" sx={{ textAlign: "center", marginBottom: "40px", fontFamily: 'monospace', fontWeight: 'bold'}}>
-                <a style={{color: 'black'}} href={searchItem._source.link} target="_blank">{ searchItem._source.title }</a>
+                <a style={{color: 'black'}} href={searchItem._source.link} target="_blank">{ searchItem._source.title }
+                    <LaunchIcon sx={{ verticalAlign: "middle", marginLeft: "10px" }}/>
+                </a>
             </Typography>
             
             {/* Description */}
@@ -22,21 +24,21 @@ function ProductComponent({ searchItem } : { searchItem:any }) {
                         { searchItem._source.product.brandName }
                     </Typography>
 
-                    <Typography sx={{ fontWeight: "bold", marginTop: "5px" }}>
+                    <Typography sx={{ fontWeight: "bold", marginTop: "15px" }}>
                         Manufacturer
                     </Typography>
                     <Typography>
                         { searchItem._source.product.manufacturer }
                     </Typography>
 
-                    <Typography sx={{ fontWeight: "bold", marginTop: "5px" }}>
+                    <Typography sx={{ fontWeight: "bold", marginTop: "15px" }}>
                         Country of Origin
                     </Typography>
                     <Typography>
                         { searchItem._source.product.countryOfOrigin }
                     </Typography>
 
-                    <Typography sx={{ fontWeight: "bold", marginTop: "5px" }}>
+                    <Typography sx={{ fontWeight: "bold", marginTop: "15px" }}>
                         Date Reported
                     </Typography>
                     <Typography>

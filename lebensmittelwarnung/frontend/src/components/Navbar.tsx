@@ -13,7 +13,7 @@ function Navbar() {
     const navigate = useNavigate();
 
     return (
-        <AppBar position="static" sx={{ backgroundColor: "black" }}>
+        <AppBar position="static" sx={{ backgroundColor: "black", height: '10vh' }}>
         <Container maxWidth="xl">
             <Toolbar disableGutters>
             <CodeIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
