@@ -3,7 +3,9 @@ import Box from '@mui/material/Box';
 import Search from "./Search";
 import ItemComponents from './ItemComponents';
 import AnimateHeight from 'react-animate-height';
-import { LocationSearching } from '@mui/icons-material';
+import Fade from '@mui/material/Fade';
+import StraightIcon from '@mui/icons-material/Straight';
+import Typography from '@mui/material/Typography';
 
 const regions = [
     "Alle Meldungen",
@@ -25,11 +27,20 @@ const regions = [
     "Thüringen"
 ];
 
+function serializeFilter(filters:string[]) {
+    var queryStr:string[] = [];
+    for (const filter of filters) {
+        queryStr.push(`region=${filter}`);
+    }
+    return queryStr.join("&");
+}
+
 function SearchPage() {
     const [search, setSearch] = React.useState<string>('')
     const [filters, setFilters] = React.useState<string[]>([]);
     const [searchResult, setSearchResult] = React.useState<[]>([]);
-    const [searchHeight, setSearchHeight] = React.useState<`${number}%`>('80%');
+    const [filteredResult, setFilteredResult] = React.useState<[]>([]);
+    const [searchHeight, setSearchHeight] = React.useState<`${number}%`>('40%');
     const [notFound, setNotFound] = React.useState<boolean>(false);
 
     // set fetch function for search
@@ -37,14 +48,41 @@ function SearchPage() {
         fetch(`api/search/${search}/`)
             .then(res => res.json())
             .then((result) => {
+                // store raw search result
                 setSearchResult(result.hits.hits);
-                setSearchHeight('20%');
-                if (result.hits.hits.length === 0) {
-                    setNotFound(true);
-                } else {
-                    setNotFound(false);
+                // filter and store filtered results
+                filterSearchResult(result.hits.hits);
+            });
+    }
+
+    // filter search result by region
+    const filterSearchResult = (searchRes:[]) => {
+        const checkContainsAffectedRegion = (item : any) => {
+            // base case
+            if (filters.length === 0) {
+                return true;
+            }
+            if (item._source.affectedStates) {
+                for (const filter of filters) {
+                    if (item._source.affectedStates.includes(filter)) {
+                        return true;
+                    }
                 }
-            }) 
+                return false;
+            } else {
+                return false;
+            }
+        }
+        const filteredRes:any = searchRes.filter(checkContainsAffectedRegion);
+        setFilteredResult(filteredRes);
+
+        // check if result is non-empty
+        setSearchHeight('20%');
+        if (filteredRes.length === 0) {
+            setNotFound(true);
+        } else {
+            setNotFound(false);
+        }
     }
 
     // on change of search, fetch new data
@@ -58,15 +96,23 @@ function SearchPage() {
 
         // reset to base arrangement if search is empty
         if (search === '') {
-            setSearchHeight('80%');
+            setSearchHeight('40%');
             setNotFound(false);
             setSearchResult([]);
+            setFilteredResult([]);
         }
-        
         return () => {
             clearTimeout(timeoutFetch);
         }
-    }, [search, filters])
+    }, [search])
+
+    // on change of filters, apply filter to search result
+    React.useEffect(() => {
+        // filter searchResult based on regions
+        if (search !== '') {
+            filterSearchResult(searchResult);
+        }
+    }, [filters])
 
     return (
         <div>
@@ -81,7 +127,7 @@ function SearchPage() {
                                 display: 'flex',
                                 flexFlow: 'row nowrap',
                                 justifyContent: 'center',
-                                alignItems: 'center',
+                                alignItems: 'end',
                             }}
                         >
                             <Search 
@@ -92,14 +138,31 @@ function SearchPage() {
                             />
                         </Box>
                     </Box>
-                    
                 </AnimateHeight>
+
+                {/* Landing page information */}
+                <Fade in={search === ''}>
+                    <Box sx={{
+                        display: 'flex',
+                        justifyContent:'center', 
+                        alignItems:'center', 
+                        height: (searchResult.length === 0 && !notFound) ? '20vh' : '0vh'
+                    }}>
+                        <Box sx={{ display:'flex', flexDirection:'column', alignItems:'center'}}>
+                            <StraightIcon fontSize="large"/>
+                            <Box sx={{ marginTop: '20px', maxWidth: '40%', fontFamily: 'monospace', fontSize: '1.2em' }}>
+                                Welcome to <b>Lebensmittelwarnung</b>. This registry contains <b>public warnings</b> about 
+                                products as published by the <b>BVL</b>. Begin by <b>searching for any item.</b>
+                            </Box>
+                        </Box>
+                    </Box>
+                </Fade>
                 
                 {/* for Displaying Items */}
                 { 
                     search === '' 
                         ? null
-                        : <ItemComponents searchResult={searchResult} notFound={notFound}/>
+                        : <ItemComponents searchResult={filteredResult} notFound={notFound} filters={filters}/>
                 }
             </Box>
         </div>

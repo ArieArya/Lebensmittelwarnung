@@ -4,7 +4,9 @@ import FoodComponent from './FoodComponent';
 import ProductComponent from './ProductComponent';
 import NotFoundComponent from './NotFoundComponent';
 
-function ItemComponents( { searchResult, notFound } : { searchResult:[], notFound:boolean }) {
+function ItemComponents( 
+        { searchResult, notFound, filters } : 
+        { searchResult:[], notFound:boolean, filters:string[] }) {
     return (
         <Box style={{ height: "80%" }}>
             { notFound 
@@ -12,7 +14,7 @@ function ItemComponents( { searchResult, notFound } : { searchResult:[], notFoun
                 : searchResult.map((item:any, i:number) => {
                     return (
                         item._source._type == '.FoodWarning' 
-                            ? <FoodComponent key={i} searchItem={item}/>
+                            ? <FoodComponent key={i} searchItem={item} filters={filters} />
                             : <ProductComponent key={i} searchItem={item}/>
                     )
                 })

@@ -33,26 +33,24 @@ function RegionFilter(
         
     return (
         <div>
-            <FormControl sx={{ marginLeft: 1, width: 150 }}>
-            <InputLabel id="demo-multiple-checkbox-label">Regions</InputLabel>
-            <Select
-                labelId="demo-multiple-checkbox-label"
-                id="demo-multiple-checkbox"
-                multiple
-                value={filters}
-                onChange={handleChange}
-                input={<OutlinedInput label="Regions" />}
-                renderValue={(selected) => selected.join(', ')}
-                MenuProps={MenuProps}
-            >
-                {regions.map((region) => (
-                    <MenuItem key={region} value={region}>
-                    <Checkbox checked={filters.indexOf(region) > -1} />
-                    <ListItemText primary={region} />
-                    </MenuItem>
-                ))}
-            </Select>
-        </FormControl>
+            <FormControl sx={{ marginLeft: 1, width: 170, maxWidth: "20vw" }}>
+                <InputLabel id="demo-multiple-checkbox-label">Affected Regions</InputLabel>
+                <Select
+                    multiple
+                    value={filters}
+                    onChange={handleChange}
+                    input={<OutlinedInput label="Affected regions" />}
+                    renderValue={(selected) => selected.join(', ')}
+                    MenuProps={MenuProps}
+                >
+                    {regions.map((region) => (
+                        <MenuItem key={region} value={region}>
+                        <Checkbox checked={filters.indexOf(region) > -1} />
+                        <ListItemText primary={region} />
+                        </MenuItem>
+                    ))}
+                </Select>
+            </FormControl>
         </div>
     )
 }

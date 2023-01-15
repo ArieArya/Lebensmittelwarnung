@@ -13,7 +13,7 @@ function Search(
             alignItems: 'center',
             justifyContent: 'center',
         }}>
-            <Box sx={{ width: 600, maxWidth: '100%'}}>
+            <Box sx={{ width: 800, maxWidth: '80vw'}}>
                 <div style={{ display: 'flex', flexDirection: 'row' }}>
                     <TextField 
                         fullWidth 

@@ -4,9 +4,9 @@ import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
 import LaunchIcon from '@mui/icons-material/Launch';
 
-function FoodComponent({ searchItem } : { searchItem:any }) {
+function FoodComponent({ searchItem, filters } : { searchItem:any, filters:string[] }) {
     return (
-        <Box sx={{ margin: "20px 10vw 20px 10vw", p: 3, border: "1px solid", borderRadius: "15px" }}>
+        <Box sx={{ margin: "30px 10vw 20px 10vw", p: 3, border: "1px solid", borderRadius: "15px" }}>
             {/* Title */}
             <Typography variant="h6" sx={{ textAlign: "center", marginBottom: "40px", fontFamily: 'monospace', fontWeight: 'bold' }}>
                 <a style={{color: 'black'}} href={searchItem._source.link} target="_blank">{ searchItem._source.title }
@@ -46,7 +46,11 @@ function FoodComponent({ searchItem } : { searchItem:any }) {
                         Affected States
                     </Typography>
                     { searchItem._source.affectedStates.map((state:string, i:number) => {
-                        return <Chip key={i} label={state} sx={{ margin: "5px 5px 5px 0px" }} />
+                        if (filters.includes(state)) {
+                            return <Chip key={i} label={state} color="success" sx={{ margin: "5px 5px 5px 0px" }} />
+                        } else {
+                            return <Chip key={i} label={state} sx={{ margin: "5px 5px 5px 0px" }} />
+                        }
                     })}
                 </Box>
 

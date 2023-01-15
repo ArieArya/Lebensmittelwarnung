@@ -204,6 +204,10 @@ object-assign
 
 /*! ../utils/useIsFocusVisible */
 
+/*! ./ApiPill */
+
+/*! ./ApiSection */
+
 /*! ./App */
 
 /*! ./App.css */
@@ -217,6 +221,8 @@ object-assign
 /*! ./GlobalStyles */
 
 /*! ./ItemComponents */
+
+/*! ./LeftBar */
 
 /*! ./ListContext */
 
@@ -498,6 +504,8 @@ object-assign
 
 /*! @mui/icons-material/Launch */
 
+/*! @mui/icons-material/Straight */
+
 /*! @mui/material/AppBar */
 
 /*! @mui/material/Box */
@@ -509,6 +517,8 @@ object-assign
 /*! @mui/material/Chip */
 
 /*! @mui/material/Container */
+
+/*! @mui/material/Fade */
 
 /*! @mui/material/FormControl */
 
@@ -644,6 +654,14 @@ object-assign
   !*** ./node_modules/stylis/src/Tokenizer.js ***!
   \**********************************************/
 
+/*!**********************************************!*\
+  !*** ./src/components/docs_page/ApiPill.tsx ***!
+  \**********************************************/
+
+/*!**********************************************!*\
+  !*** ./src/components/docs_page/LeftBar.tsx ***!
+  \**********************************************/
+
 /*!***********************************************!*\
   !*** ./node_modules/@mui/material/Box/Box.js ***!
   \***********************************************/
@@ -742,6 +760,10 @@ object-assign
 
 /*!*************************************************!*\
   !*** ./node_modules/react-router/dist/index.js ***!
+  \*************************************************/
+
+/*!*************************************************!*\
+  !*** ./src/components/docs_page/ApiSection.tsx ***!
   \*************************************************/
 
 /*!**************************************************!*\
@@ -894,6 +916,10 @@ object-assign
 
 /*!******************************************************!*\
   !*** ./node_modules/@mui/base/utils/useSlotProps.js ***!
+  \******************************************************/
+
+/*!******************************************************!*\
+  !*** ./node_modules/@mui/icons-material/Straight.js ***!
   \******************************************************/
 
 /*!******************************************************!*\

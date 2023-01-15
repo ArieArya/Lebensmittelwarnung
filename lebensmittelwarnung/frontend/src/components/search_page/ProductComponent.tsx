@@ -5,7 +5,7 @@ import LaunchIcon from '@mui/icons-material/Launch';
 
 function ProductComponent({ searchItem } : { searchItem:any }) {
     return (
-        <Box sx={{ margin: "20px 10vw 20px 10vw", p: 3, border: "1px solid", borderRadius: "15px" }}>
+        <Box sx={{ margin: "30px 10vw 20px 10vw", p: 3, border: "1px solid", borderRadius: "15px" }}>
             {/* Title */}
             <Typography variant="h6" sx={{ textAlign: "center", marginBottom: "40px", fontFamily: 'monospace', fontWeight: 'bold'}}>
                 <a style={{color: 'black'}} href={searchItem._source.link} target="_blank">{ searchItem._source.title }
@@ -48,7 +48,14 @@ function ProductComponent({ searchItem } : { searchItem:any }) {
 
                 {/* 2nd column */}
                 <Box sx={{ flex: 2, m: 1}}>
-                    <Typography sx={{ fontWeight: "bold" }}>
+                    <Typography sx={{ fontWeight: "bold"}}>
+                        Short Description
+                    </Typography>
+                    <Typography>
+                        { searchItem._source.product.shortDescription ? searchItem._source.product.shortDescription.replace(/<\/?[^>]+(>|$)/g, "") : null}
+                    </Typography>
+
+                    <Typography sx={{ fontWeight: "bold",marginTop: "15px" }}>
                         Safety Information
                     </Typography>
                     <Typography>

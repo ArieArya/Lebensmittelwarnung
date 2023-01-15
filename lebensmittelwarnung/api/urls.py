@@ -4,7 +4,6 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('search/<str:query>/', views.search),
-    path('food/', views.getFoodWarning),
-    path('products/', views.getProductWarning)
+    path('search/', views.searchPost),
+    path('search/<str:query>/', views.searchGet)
 ]
