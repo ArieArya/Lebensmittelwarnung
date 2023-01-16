@@ -13,7 +13,7 @@ function Navbar() {
     const navigate = useNavigate();
 
     return (
-        <AppBar position="static" sx={{ backgroundColor: "black", height: '10vh' }}>
+        <AppBar position="sticky" sx={{ backgroundColor: "black", height: '10vh' }}>
         <Container maxWidth="xl">
             <Toolbar disableGutters>
             <CodeIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -21,7 +21,7 @@ function Navbar() {
                 variant="h6"
                 noWrap
                 component="a"
-                href="https://lebensmittelwarnung.api.bund.dev/"
+                href="https://www.lebensmittelwarnung.de/bvl-lmw-de/liste/alle/hessen/10/0"
                 target="_blank"
                 sx={{
                 mr: 2,

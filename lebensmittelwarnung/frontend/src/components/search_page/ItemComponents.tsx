@@ -4,9 +4,13 @@ import FoodComponent from './FoodComponent';
 import ProductComponent from './ProductComponent';
 import NotFoundComponent from './NotFoundComponent';
 
-function ItemComponents( 
-        { searchResult, notFound, filters } : 
-        { searchResult:[], notFound:boolean, filters:string[] }) {
+interface ItemComponentProps {
+    searchResult: [];
+    notFound: boolean;
+    filters: string[];
+}
+
+function ItemComponents( { searchResult, notFound, filters } : ItemComponentProps) {
     return (
         <Box style={{ height: "80%" }}>
             { notFound 

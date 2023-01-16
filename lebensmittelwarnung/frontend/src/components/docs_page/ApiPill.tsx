@@ -1,19 +1,30 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
+import { ApiDocumentation } from '../../model';
 
-function ApiPill(
-        { apiId, setApiSection, apiDoc } : 
-        { apiId : number, setApiSection : any, apiDoc : any }) {
+interface ApiPillProps {
+    apiId: number;
+    apiDoc: ApiDocumentation;
+}
+
+function ApiPill({ apiId, apiDoc } : ApiPillProps) {
+    const handleClickScroll = () => {
+        const element = document.getElementById(`api-${apiId}`);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <Box sx={{ 
             height: "30px", 
-            width: "90%", 
+            width: "320px", 
             margin: "auto",
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             padding: "30px 0px 20px 0px",
-            fontFamily: "monospace",
+            fontFamily: "monospace"
         }}>
             <Box sx={{ 
                 borderRadius: "10px",
@@ -28,7 +39,7 @@ function ApiPill(
                 alignItems: "center"
             }}
             onClick={() => {
-                setApiSection(apiId);
+                handleClickScroll()
             }}
             >
                 {

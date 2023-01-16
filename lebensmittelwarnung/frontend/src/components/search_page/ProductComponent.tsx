@@ -3,7 +3,11 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import LaunchIcon from '@mui/icons-material/Launch';
 
-function ProductComponent({ searchItem } : { searchItem:any }) {
+interface ProductComponentProps {
+    searchItem : any;
+}
+
+function ProductComponent({ searchItem } : ProductComponentProps ) {
     return (
         <Box sx={{ margin: "30px 10vw 20px 10vw", p: 3, border: "1px solid", borderRadius: "15px" }}>
             {/* Title */}

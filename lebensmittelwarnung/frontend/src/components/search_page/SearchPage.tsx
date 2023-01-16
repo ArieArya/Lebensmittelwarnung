@@ -5,7 +5,6 @@ import ItemComponents from './ItemComponents';
 import AnimateHeight from 'react-animate-height';
 import Fade from '@mui/material/Fade';
 import StraightIcon from '@mui/icons-material/Straight';
-import Typography from '@mui/material/Typography';
 
 const regions = [
     "Alle Meldungen",
@@ -26,14 +25,6 @@ const regions = [
     "Schleswig-Holstein",
     "Thüringen"
 ];
-
-function serializeFilter(filters:string[]) {
-    var queryStr:string[] = [];
-    for (const filter of filters) {
-        queryStr.push(`region=${filter}`);
-    }
-    return queryStr.join("&");
-}
 
 function SearchPage() {
     const [search, setSearch] = React.useState<string>('')
@@ -56,7 +47,7 @@ function SearchPage() {
     }
 
     // filter search result by region
-    const filterSearchResult = (searchRes:[]) => {
+    const filterSearchResult = (searchRes : []) => {
         const checkContainsAffectedRegion = (item : any) => {
             // base case
             if (filters.length === 0) {
@@ -73,7 +64,7 @@ function SearchPage() {
                 return false;
             }
         }
-        const filteredRes:any = searchRes.filter(checkContainsAffectedRegion);
+        const filteredRes : any = searchRes.filter(checkContainsAffectedRegion);
         setFilteredResult(filteredRes);
 
         // check if result is non-empty
@@ -108,7 +99,6 @@ function SearchPage() {
 
     // on change of filters, apply filter to search result
     React.useEffect(() => {
-        // filter searchResult based on regions
         if (search !== '') {
             filterSearchResult(searchResult);
         }
@@ -152,7 +142,7 @@ function SearchPage() {
                             <StraightIcon fontSize="large"/>
                             <Box sx={{ marginTop: '20px', maxWidth: '40%', fontFamily: 'monospace', fontSize: '1.2em' }}>
                                 Welcome to <b>Lebensmittelwarnung</b>. This registry contains <b>public warnings</b> about 
-                                products as published by the <b>BVL</b>. Begin by <b>searching for any item.</b>
+                                products as published by the <b>BVL</b>. Begin by <b>searching for any item</b> (e.g. chocolate). 
                             </Box>
                         </Box>
                     </Box>

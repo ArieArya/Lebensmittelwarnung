@@ -1,12 +1,17 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import ApiPill from './ApiPill';
+import { ApiDocumentation } from '../../model';
 
-function LeftBar({ setApiSection, apiDocList } : { setApiSection : any, apiDocList : any[] }) {
+interface LeftBarProps {
+    apiDocList: ApiDocumentation[];
+}
+
+function LeftBar({ apiDocList } : LeftBarProps) {
     return (
-        <Box sx={{ textAlign: "center" }}>
+        <Box sx={{ textAlign: "center", position: "fixed" }}>
             { apiDocList.map((item, i) => {
-                return <ApiPill key={i} apiId={i} setApiSection={setApiSection} apiDoc={item}/>
+                return <ApiPill key={i} apiId={i} apiDoc={item}/>
             })}
         </Box>
     )

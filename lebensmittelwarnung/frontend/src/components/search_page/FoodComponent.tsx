@@ -4,7 +4,12 @@ import Typography from '@mui/material/Typography';
 import Chip from '@mui/material/Chip';
 import LaunchIcon from '@mui/icons-material/Launch';
 
-function FoodComponent({ searchItem, filters } : { searchItem:any, filters:string[] }) {
+interface FoodComponentProps {
+    searchItem : any;
+    filters : string[];
+}
+
+function FoodComponent( { searchItem, filters } : FoodComponentProps) {
     return (
         <Box sx={{ margin: "30px 10vw 20px 10vw", p: 3, border: "1px solid", borderRadius: "15px" }}>
             {/* Title */}

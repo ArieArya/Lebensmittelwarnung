@@ -3,9 +3,14 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import RegionFilter from './RegionFilter';
 
-function Search(
-        { setSearch, filters, setFilters, regions } : 
-        { setSearch:any, filters:string[], setFilters:any, regions:string[] }) {
+interface SearchProps {
+    setSearch: React.Dispatch<React.SetStateAction<string>>;
+    filters: string[];
+    setFilters: React.Dispatch<React.SetStateAction<string[]>>;
+    regions: string[];
+}
+
+function Search({ setSearch, filters, setFilters, regions } : SearchProps ) {
     return (
         <div style={{
             display: 'flex',

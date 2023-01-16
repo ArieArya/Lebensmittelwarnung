@@ -18,10 +18,13 @@ const MenuProps = {
   },
 };
 
-function RegionFilter(
-        { filters, setFilters, regions } : 
-        { filters:string[], setFilters:any, regions:string[] }) {
+interface RegionFilterProps {
+    filters: string[];
+    setFilters: React.Dispatch<React.SetStateAction<string[]>>;
+    regions: string[];
+}
 
+function RegionFilter({ filters, setFilters, regions } : RegionFilterProps) {
     const handleChange = (event: SelectChangeEvent<typeof filters>) => {
         const {
             target: { value },
