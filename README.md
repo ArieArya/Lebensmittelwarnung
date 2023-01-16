@@ -18,9 +18,9 @@ This project addresses the problem above through the following:
 
 ___
 
-### Website Demonstration
+### Website Demonstration
 
-![](https://github.com/ArieArya/Lebensmittelwarnung/website-demo.gif)
+<img src="https://github.com/ArieArya/Lebensmittelwarnung/blob/master/website-demo.gif" width="100%"/>
 
 ___
 
