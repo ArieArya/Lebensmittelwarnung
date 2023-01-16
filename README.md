@@ -20,7 +20,7 @@ ___
 
 ### Website Demonstration
 
-test
+![](https://github.com/ArieArya/Lebensmittelwarnung/website-demo.gif)
 
 ___
 
