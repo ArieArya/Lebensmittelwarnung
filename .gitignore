@@ -1,6 +1,9 @@
 *node_modules
 venv
 
+# AWS key pair
+*.pem
+
 ### Secret Keys ###
 *secret*
 
