@@ -105,7 +105,7 @@ function SearchPage() {
     }, [filters])
 
     return (
-        <Box sx={{ height: '90vh', paddingTop: "70px" }}>
+        <Box className="searchPage">
             {/* for Search */}
             <AnimateHeight className="animate-height" duration={500} height={searchHeight}>
                 <Box sx={{ display: 'flex', height: '100% !important' }}>

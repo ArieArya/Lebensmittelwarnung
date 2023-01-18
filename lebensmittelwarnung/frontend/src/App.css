@@ -33,6 +33,11 @@
     height: 9vh;
 }
 
+.searchPage {
+    height: 91vh;
+    padding-top: 70px;
+}
+
 @media screen and (max-width: 900px) {
     .infoBox {
         margin-top: 20px;
@@ -69,6 +74,10 @@
 
     .navbarBox {
         height: 8vh;
+    }
+
+    .searchPage { 
+        height: 92vh;
     }
 }
 
