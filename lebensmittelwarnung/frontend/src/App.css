@@ -1,3 +1,59 @@
 .animate-height > div {
     height: 100%;
 }
+
+
+.infoBox {
+    margin-top: 20px;
+    max-width: 40%;
+    font-family: monospace;
+    font-size: 1.2rem;
+}
+
+.itemBox {
+    margin: 20px 10vw 20px 10vw;
+    padding: 3rem;
+    border: 1px solid;
+    border-radius: 15px;
+}
+
+.apiBox {
+    width: 80%;
+    max-width: 70vw;
+    background-color: #303846;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 1.2rem;
+    scroll-margin: 90px;
+}
+
+.navbarBox {
+    background-color: black !important;
+    height: 9vh;
+}
+
+@media screen and (max-width: 600px) {
+    .infoBox {
+        max-width: 90%;
+        font-size: 1rem;
+    }
+
+    .itemBox {
+        margin: 10px 5vw 10px 5vw;
+        padding: 1rem;
+        border: 1px solid;
+        border-radius: 7px;
+    }
+
+    .apiBox {
+        width: 90%;
+        max-width: 90vw;
+        padding: 1rem;
+        margin-top: 30px;
+    }   
+
+    .navbarBox {
+        height: 8vh;
+    }
+}

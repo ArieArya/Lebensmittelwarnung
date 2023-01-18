@@ -18,7 +18,7 @@ function Search({ setSearch, filters, setFilters, regions } : SearchProps ) {
             alignItems: 'center',
             justifyContent: 'center',
         }}>
-            <Box sx={{ width: 800, maxWidth: '80vw'}}>
+            <Box sx={{ width: 800, maxWidth: '90vw'}}>
                 <div style={{ display: 'flex', flexDirection: 'row' }}>
                     <TextField 
                         fullWidth 

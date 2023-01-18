@@ -10,7 +10,7 @@ interface MainContentProps {
 
 function MainContent( { apiDocList } : MainContentProps ) {
     return (
-        <Box sx={{ paddingTop: "80px" }}>
+        <Box sx={{ paddingTop: "70px" }}>
             { apiDocList.map((item, i) => {
                 return <ApiSection key={i} apiId={i} apiDoc={item}/>
             })}

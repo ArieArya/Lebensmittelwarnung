@@ -13,7 +13,7 @@ function Navbar() {
     const navigate = useNavigate();
 
     return (
-        <AppBar position="fixed" sx={{ backgroundColor: "black", height: '10vh' }}>
+        <AppBar className="navbarBox" position="fixed">
         <Container maxWidth="xl">
             <Toolbar disableGutters>
             <CodeIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -38,7 +38,7 @@ function Navbar() {
 
             <Box sx={{ flex: 1 }}/>
 
-            <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+            <Box sx={{ display: { md: 'flex', xs: 'flex' } }}>
                 <Button
                     key='search'
                     sx={{ 

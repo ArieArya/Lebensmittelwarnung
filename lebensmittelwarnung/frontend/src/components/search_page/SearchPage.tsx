@@ -105,7 +105,7 @@ function SearchPage() {
     }, [filters])
 
     return (
-        <Box sx={{ height: '90vh', paddingTop: "90px" }}>
+        <Box sx={{ height: '90vh', paddingTop: "70px" }}>
             {/* for Search */}
             <AnimateHeight className="animate-height" duration={500} height={searchHeight}>
                 <Box sx={{ display: 'flex', height: '100% !important' }}>
@@ -139,7 +139,7 @@ function SearchPage() {
                 }}>
                     <Box sx={{ display:'flex', flexDirection:'column', alignItems:'center'}}>
                         <StraightIcon fontSize="large"/>
-                        <Box sx={{ marginTop: '20px', maxWidth: '40%', fontFamily: 'monospace', fontSize: '1.2em' }}>
+                        <Box className="infoBox">
                             Welcome to <b>Lebensmittelwarnung</b>. This registry contains <b>public warnings</b> about 
                             products as published by the <b>BVL</b>. Begin by <b>searching for any item</b> (e.g. chocolate). 
                         </Box>

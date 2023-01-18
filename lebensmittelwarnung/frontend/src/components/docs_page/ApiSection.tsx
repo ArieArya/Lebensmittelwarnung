@@ -11,19 +11,7 @@ interface ApiSectionProps {
 
 function ApiSection( { apiId, apiDoc } : ApiSectionProps ) {
     return (
-        <Box 
-            id={`api-${apiId}`}
-            sx={{ 
-                width: "80%",
-                maxWidth: "70vw",
-                backgroundColor: "#303846", 
-                borderRadius: "5px",
-                margin: "auto",
-                marginTop: "50px",
-                p: 3,
-                scrollMargin: "90px"
-            }}>
-
+        <Box id={`api-${apiId}`} className="apiBox">
             {/* API title */}
             <Typography variant="h5" sx={{ fontFamily: "monospace", color: "white", marginBottom: "20px"}}>
                 <b>{ apiDoc.apiTitle }</b>

@@ -11,7 +11,7 @@ const apiDocList: ApiDocumentation[] = [apiDocSearchGet, apiDocSearchPost];
 function DocsPage() {
     return (
         <Box sx={{ height: "100%", display: "flex"}}>
-            <Box sx={{ flex: 1, backgroundColor: "#dedede" }}>
+            <Box sx={{ display: { md: 'inline', xs: 'none' }, flex: 1, backgroundColor: "#dedede" }}>
                 <LeftBar apiDocList={apiDocList}/>
             </Box>
             <Box sx={{ flex: 3 }}>

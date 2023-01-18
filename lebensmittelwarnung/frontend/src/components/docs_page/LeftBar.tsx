@@ -9,7 +9,7 @@ interface LeftBarProps {
 
 function LeftBar({ apiDocList } : LeftBarProps) {
     return (
-        <Box sx={{ textAlign: "center", position: "fixed", paddingTop: "90px" }}>
+        <Box sx={{ textAlign: "center", position: "fixed", paddingTop: "80px" }}>
             { apiDocList.map((item, i) => {
                 return <ApiPill key={i} apiId={i} apiDoc={item}/>
             })}

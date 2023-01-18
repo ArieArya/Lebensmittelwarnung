@@ -11,7 +11,7 @@ interface FoodComponentProps {
 
 function FoodComponent( { searchItem, filters } : FoodComponentProps) {
     return (
-        <Box sx={{ margin: "30px 10vw 20px 10vw", p: 3, border: "1px solid", borderRadius: "15px" }}>
+        <Box className="itemBox">
             {/* Title */}
             <Typography variant="h6" sx={{ textAlign: "center", marginBottom: "40px", fontFamily: 'monospace', fontWeight: 'bold' }}>
                 <a style={{color: 'black'}} href={searchItem._source.link} target="_blank">{ searchItem._source.title }
