@@ -29,4 +29,5 @@ ___
 - AWS EC2 (Infrastructure)
 - ReactJS + TypeScript (Frontend)
 - Django (Backend)
+- Nginx (web server)
 - REST
