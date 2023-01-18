@@ -135,7 +135,7 @@ function SearchPage() {
                     display: 'flex',
                     justifyContent:'center', 
                     alignItems:'center', 
-                    height: (searchResult.length === 0 && !notFound) ? '20vh' : '0vh'
+                    height: (searchResult.length === 0 && !notFound) ? '30vh' : '0vh'
                 }}>
                     <Box sx={{ display:'flex', flexDirection:'column', alignItems:'center'}}>
                         <StraightIcon fontSize="large"/>

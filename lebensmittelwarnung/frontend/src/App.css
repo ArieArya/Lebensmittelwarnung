@@ -33,7 +33,21 @@
     height: 9vh;
 }
 
+@media screen and (max-width: 900px) {
+    .infoBox {
+        margin-top: 20px;
+        max-width: 60%;
+        font-family: monospace;
+        font-size: 1.1rem;
+    }
+}
+
 @media screen and (max-width: 600px) {
+    html,
+    body {
+        overflow-x:hidden;
+    }
+
     .infoBox {
         max-width: 90%;
         font-size: 1rem;
@@ -55,5 +69,12 @@
 
     .navbarBox {
         height: 8vh;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .infoBox {
+        max-width: 90%;
+        font-size: 0.8rem;
     }
 }
