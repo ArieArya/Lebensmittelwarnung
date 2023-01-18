@@ -105,57 +105,55 @@ function SearchPage() {
     }, [filters])
 
     return (
-        <div>
-            <Box sx={{ height: '90vh' }}>
-                {/* for Search */}
-                <AnimateHeight className="animate-height" duration={500} height={searchHeight}>
-                    <Box sx={{ display: 'flex', height: '100% !important' }}>
-                        <Box
-                            sx={{
-                                width: '100%',
-                                height: '100%',
-                                display: 'flex',
-                                flexFlow: 'row nowrap',
-                                justifyContent: 'center',
-                                alignItems: 'end',
-                            }}
-                        >
-                            <Search 
-                                setSearch={setSearch}
-                                filters={filters} 
-                                setFilters={setFilters}
-                                regions={regions}
-                            />
-                        </Box>
+        <Box sx={{ height: '90vh', paddingTop: "90px" }}>
+            {/* for Search */}
+            <AnimateHeight className="animate-height" duration={500} height={searchHeight}>
+                <Box sx={{ display: 'flex', height: '100% !important' }}>
+                    <Box
+                        sx={{
+                            width: '100%',
+                            height: '100%',
+                            display: 'flex',
+                            flexFlow: 'row nowrap',
+                            justifyContent: 'center',
+                            alignItems: 'end',
+                        }}
+                    >
+                        <Search 
+                            setSearch={setSearch}
+                            filters={filters} 
+                            setFilters={setFilters}
+                            regions={regions}
+                        />
                     </Box>
-                </AnimateHeight>
+                </Box>
+            </AnimateHeight>
 
-                {/* Landing page information */}
-                <Fade in={search === ''}>
-                    <Box sx={{
-                        display: 'flex',
-                        justifyContent:'center', 
-                        alignItems:'center', 
-                        height: (searchResult.length === 0 && !notFound) ? '20vh' : '0vh'
-                    }}>
-                        <Box sx={{ display:'flex', flexDirection:'column', alignItems:'center'}}>
-                            <StraightIcon fontSize="large"/>
-                            <Box sx={{ marginTop: '20px', maxWidth: '40%', fontFamily: 'monospace', fontSize: '1.2em' }}>
-                                Welcome to <b>Lebensmittelwarnung</b>. This registry contains <b>public warnings</b> about 
-                                products as published by the <b>BVL</b>. Begin by <b>searching for any item</b> (e.g. chocolate). 
-                            </Box>
+            {/* Landing page information */}
+            <Fade in={search === ''}>
+                <Box sx={{
+                    display: 'flex',
+                    justifyContent:'center', 
+                    alignItems:'center', 
+                    height: (searchResult.length === 0 && !notFound) ? '20vh' : '0vh'
+                }}>
+                    <Box sx={{ display:'flex', flexDirection:'column', alignItems:'center'}}>
+                        <StraightIcon fontSize="large"/>
+                        <Box sx={{ marginTop: '20px', maxWidth: '40%', fontFamily: 'monospace', fontSize: '1.2em' }}>
+                            Welcome to <b>Lebensmittelwarnung</b>. This registry contains <b>public warnings</b> about 
+                            products as published by the <b>BVL</b>. Begin by <b>searching for any item</b> (e.g. chocolate). 
                         </Box>
                     </Box>
-                </Fade>
-                
-                {/* for Displaying Items */}
-                { 
-                    search === '' 
-                        ? null
-                        : <ItemComponents searchResult={filteredResult} notFound={notFound} filters={filters}/>
-                }
-            </Box>
-        </div>
+                </Box>
+            </Fade>
+            
+            {/* for Displaying Items */}
+            { 
+                search === '' 
+                    ? null
+                    : <ItemComponents searchResult={filteredResult} notFound={notFound} filters={filters}/>
+            }
+        </Box>
     )
 }
 
