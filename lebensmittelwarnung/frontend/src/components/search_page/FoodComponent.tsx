@@ -20,7 +20,7 @@ function FoodComponent( { searchItem, filters } : FoodComponentProps) {
             </Typography>
             
             {/* Description */}
-            <Box sx={{ display: "flex" }}>
+            <Box className="descriptionBox">
                 {/* 1st column */}
                 <Box sx={{ flex: 1, m: 1}}>
                     <Typography sx={{ fontWeight: "bold" }}>

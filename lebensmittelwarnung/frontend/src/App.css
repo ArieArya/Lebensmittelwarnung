@@ -37,6 +37,10 @@
     padding-top: 70px;
 }
 
+.descriptionBox {
+    display: flex;
+}
+
 .gifNotFound {
     height: 300px;
     border-radius: 15%;
@@ -78,6 +82,10 @@
 
     .navbarBox {
         height: 70px;
+    }
+
+    .descriptionBox {
+        flex-direction: column;
     }
 
     .gifNotFound {
