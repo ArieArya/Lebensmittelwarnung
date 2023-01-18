@@ -1,6 +1,9 @@
 *node_modules
 venv
 
+# Virtualenv
+quantco_env/
+
 # AWS key pair
 *.pem
 
