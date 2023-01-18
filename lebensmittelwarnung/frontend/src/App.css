@@ -38,6 +38,11 @@
     padding-top: 70px;
 }
 
+.gifNotFound {
+    height: 300px;
+    border-radius: 15%;
+}
+
 @media screen and (max-width: 900px) {
     .infoBox {
         margin-top: 20px;
@@ -78,6 +83,11 @@
 
     .searchPage { 
         height: 92vh;
+    }
+
+    .gifNotFound {
+        max-width: 80%;
+        object-fit: contain;
     }
 }
 
