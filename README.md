@@ -1,5 +1,8 @@
 # Lebensmmittelwarnung
 
+**Web application (Public IPv4 DNS):** http://ec2-18-170-226-27.eu-west-2.compute.amazonaws.com/
+___
+
 ### Introduction 
 
 This project is part of the Fullstack Engineering challenge proposed by QuantCo to hack and improve an existing API from [bund.dev](https://bund.dev/)! In particular, the API [lebensmittelwarnung](https://lebensmittelwarnung.api.bund.dev/) is chosen for this project, which is an API used to extract all consumer product warnings in different regions in Germany. The official website to browse such warnings can be found in https://www.lebensmittelwarnung.de/bvl-lmw-de/liste/alle/hessen/10/0.
